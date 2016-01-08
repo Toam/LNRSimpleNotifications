@@ -80,6 +80,7 @@ public class LNRNotificationView: UIView, UIGestureRecognizerDelegate {
         self.titleLabel.backgroundColor = UIColor.clearColor()
         self.titleLabel.numberOfLines = 0
         self.titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.titleLabel.textAlignment = NSTextAlignment.Center
         self.addSubview(self.titleLabel)
         
         if let bodyText = self.body {
@@ -162,7 +163,7 @@ public class LNRNotificationView: UIView, UIGestureRecognizerDelegate {
             textLabelsXPosition += image.size.width
         }
         
-        self.titleLabel.frame = CGRect(x: textLabelsXPosition, y: topPadding, width: notificationWidth - textLabelsXPosition - padding, height: CGFloat(0.0))
+        self.titleLabel.frame = CGRect(x: textLabelsXPosition, y: topPadding, width: notificationWidth - textLabelsXPosition - padding, height: CGFloat(12.0))
         self.titleLabel.sizeToFit()
         
         if self.body != nil && (self.body!).characters.count > 0 {
